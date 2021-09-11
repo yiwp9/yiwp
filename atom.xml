@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://localhost:4000</id>
+    <id>http://yiwp9.github.io</id>
     <title>yiwp</title>
-    <updated>2021-09-10T06:51:18.107Z</updated>
+    <updated>2021-09-11T07:35:32.369Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="http://localhost:4000"/>
-    <link rel="self" href="http://localhost:4000/atom.xml"/>
+    <link rel="alternate" href="http://yiwp9.github.io"/>
+    <link rel="self" href="http://yiwp9.github.io/atom.xml"/>
     <subtitle>温故而知新</subtitle>
-    <logo>http://localhost:4000/images/avatar.png</logo>
-    <icon>http://localhost:4000/favicon.ico</icon>
+    <logo>http://yiwp9.github.io/images/avatar.png</logo>
+    <icon>http://yiwp9.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, yiwp</rights>
     <entry>
         <title type="html"><![CDATA[SolidWorks 没能启动应用程序 Visual Basic，方程式和宏将不能使用。您的磁盘空间是否不足？]]></title>
-        <id>http://localhost:4000/post/solidworks-mei-neng-qi-dong-ying-yong-cheng-xu-visual-basicfang-cheng-shi-he-hong-jiang-bu-neng-shi-yong-nin-de-ci-pan-kong-jian-shi-fou-bu-zu/</id>
-        <link href="http://localhost:4000/post/solidworks-mei-neng-qi-dong-ying-yong-cheng-xu-visual-basicfang-cheng-shi-he-hong-jiang-bu-neng-shi-yong-nin-de-ci-pan-kong-jian-shi-fou-bu-zu/">
+        <id>http://yiwp9.github.io/post/solidworks-mei-neng-qi-dong-ying-yong-cheng-xu-visual-basicfang-cheng-shi-he-hong-jiang-bu-neng-shi-yong-nin-de-ci-pan-kong-jian-shi-fou-bu-zu/</id>
+        <link href="http://yiwp9.github.io/post/solidworks-mei-neng-qi-dong-ying-yong-cheng-xu-visual-basicfang-cheng-shi-he-hong-jiang-bu-neng-shi-yong-nin-de-ci-pan-kong-jian-shi-fou-bu-zu/">
         </link>
         <updated>2021-09-10T06:42:46.000Z</updated>
         <content type="html"><![CDATA[<p><code>本文转自 https://blog.csdn.net/weixin_39976450/article/details/99638801</code><br>
@@ -24,8 +24,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[MQTT 协议]]></title>
-        <id>http://localhost:4000/post/mqtt-xie-yi/</id>
-        <link href="http://localhost:4000/post/mqtt-xie-yi/">
+        <id>http://yiwp9.github.io/post/mqtt-xie-yi/</id>
+        <link href="http://yiwp9.github.io/post/mqtt-xie-yi/">
         </link>
         <updated>2021-09-07T03:17:20.000Z</updated>
         <content type="html"><![CDATA[<p><code>文章图片来源于：太极创客</code></p>
@@ -35,8 +35,8 @@
 ——MQTT协议规范中文版
 </code></pre>
 <h2 id="我对-mqtt-协议的阿简单理解">我对 MQTT 协议的阿简单理解</h2>
-<figure data-type="image" tabindex="1"><img src="http://localhost:4000/post-images/1631156011429.jpg" alt="图片来源于：太极创客" loading="lazy"></figure>
-<figure data-type="image" tabindex="2"><img src="http://localhost:4000/post-images/1631156416859.jpg" alt="图片来源于：太极创客" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="http://yiwp9.github.io/post-images/1631156011429.jpg" alt="图片来源于：太极创客" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="http://yiwp9.github.io/post-images/1631156416859.jpg" alt="图片来源于：太极创客" loading="lazy"></figure>
 <h3 id="topic"><strong>topic：</strong></h3>
 <p>云端和设备之间通信成为发布、接收消息，发布和接收消息都要通过 <strong>topic，topic</strong> 就相当于一个管道，一侧是发布消息的源头，另一侧是消息的接收者，如果没有这个管道（<strong>topic</strong>）这两端就没法通信了。</p>
 <h3 id="publish"><strong>publish：</strong></h3>
@@ -50,8 +50,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[youtube 视频搬运、翻译、添加字幕]]></title>
-        <id>http://localhost:4000/post/youtube-shi-pin-ban-yun-fan-yi-tian-jia-zi-mu/</id>
-        <link href="http://localhost:4000/post/youtube-shi-pin-ban-yun-fan-yi-tian-jia-zi-mu/">
+        <id>http://yiwp9.github.io/post/youtube-shi-pin-ban-yun-fan-yi-tian-jia-zi-mu/</id>
+        <link href="http://yiwp9.github.io/post/youtube-shi-pin-ban-yun-fan-yi-tian-jia-zi-mu/">
         </link>
         <updated>2021-08-25T13:04:23.000Z</updated>
         <content type="html"><![CDATA[<h1 id="视频下载">视频下载</h1>
@@ -74,8 +74,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[win10 网络状态变成一条虚线的解决方法]]></title>
-        <id>http://localhost:4000/post/win10-wang-luo-zhuang-tai-bian-cheng-yi-tiao-xu-xian-de-jie-jue-fang-fa/</id>
-        <link href="http://localhost:4000/post/win10-wang-luo-zhuang-tai-bian-cheng-yi-tiao-xu-xian-de-jie-jue-fang-fa/">
+        <id>http://yiwp9.github.io/post/win10-wang-luo-zhuang-tai-bian-cheng-yi-tiao-xu-xian-de-jie-jue-fang-fa/</id>
+        <link href="http://yiwp9.github.io/post/win10-wang-luo-zhuang-tai-bian-cheng-yi-tiao-xu-xian-de-jie-jue-fang-fa/">
         </link>
         <updated>2021-08-09T01:47:46.000Z</updated>
         <summary type="html"><![CDATA[<p><code>本文参考：https://blog.csdn.net/qq_41489527/article/details/109502016</code></p>
@@ -83,7 +83,7 @@
         <content type="html"><![CDATA[<p><code>本文参考：https://blog.csdn.net/qq_41489527/article/details/109502016</code></p>
 <!-- more -->
 <h1 id="现象如下">现象如下：</h1>
-<figure data-type="image" tabindex="1"><img src="http://localhost:4000/post-images/1628473899433.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="http://yiwp9.github.io/post-images/1628473899433.png" alt="" loading="lazy"></figure>
 <h1 id="解决方法">解决方法</h1>
 <h2 id="方法一">方法一</h2>
 <p>1.用Win+R键打开运行窗口，输入 services.msc 然后回车。<br>
@@ -95,7 +95,7 @@
 3.之后重启电脑</p>
 <h2 id="方法三">方法三</h2>
 <p>打开 “网络和Internet”设置” ，然后在最下面有一个“网络重置”选项，点击之后按照要求操作，然后重启电脑。<br>
-<img src="http://localhost:4000/post-images/1628474129277.png" alt="" loading="lazy"></p>
+<img src="http://yiwp9.github.io/post-images/1628474129277.png" alt="" loading="lazy"></p>
 <h2 id="方法四">方法四</h2>
 <p>1.用Win+R键打开运行窗口，输入 services.msc 然后回车。<br>
 2.在服务窗口，找到 Window Event log ，并点击“启动”运行。<br>
@@ -112,14 +112,14 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[电阻 0603 封装是什么意思]]></title>
-        <id>http://localhost:4000/post/dian-zu-0603-feng-zhuang-shi-shi-me-yi-si/</id>
-        <link href="http://localhost:4000/post/dian-zu-0603-feng-zhuang-shi-shi-me-yi-si/">
+        <id>http://yiwp9.github.io/post/dian-zu-0603-feng-zhuang-shi-shi-me-yi-si/</id>
+        <link href="http://yiwp9.github.io/post/dian-zu-0603-feng-zhuang-shi-shi-me-yi-si/">
         </link>
         <updated>2021-07-28T01:35:32.000Z</updated>
         <content type="html"><![CDATA[<p>前两位与后两位分别表示电阻的长与宽，以英寸为单位<br>
 即 06 表示 0.06inch = 1.524mm， 0.03inch = 0.762mm<br>
 注意：封装尺寸是实物封装的尺寸，不是焊盘的或者pcb封装图的尺寸，pcb封装图的尺寸会稍微大些</p>
-<figure data-type="image" tabindex="1"><img src="http://localhost:4000/post-images/1627436715029.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="http://yiwp9.github.io/post-images/1627436715029.png" alt="" loading="lazy"></figure>
 <p>其他像 0805、1206也是这个意思</p>
 <p>mask 阻焊层，不喷绿油<br>
 paste 锡膏层，开钢网时开的孔</p>
@@ -127,8 +127,8 @@ paste 锡膏层，开钢网时开的孔</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[用 C 语言编写自己的 Arduino 库]]></title>
-        <id>http://localhost:4000/post/yong-c-yu-yan-bian-xie-zi-ji-de-arduino-ku/</id>
-        <link href="http://localhost:4000/post/yong-c-yu-yan-bian-xie-zi-ji-de-arduino-ku/">
+        <id>http://yiwp9.github.io/post/yong-c-yu-yan-bian-xie-zi-ji-de-arduino-ku/</id>
+        <link href="http://yiwp9.github.io/post/yong-c-yu-yan-bian-xie-zi-ji-de-arduino-ku/">
         </link>
         <updated>2021-07-23T01:24:25.000Z</updated>
         <content type="html"><![CDATA[<p>啊</p>
@@ -136,8 +136,8 @@ paste 锡膏层，开钢网时开的孔</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[随笔]]></title>
-        <id>http://localhost:4000/post/sui-bi/</id>
-        <link href="http://localhost:4000/post/sui-bi/">
+        <id>http://yiwp9.github.io/post/sui-bi/</id>
+        <link href="http://yiwp9.github.io/post/sui-bi/">
         </link>
         <updated>2021-06-26T02:06:40.000Z</updated>
         <content type="html"><![CDATA[<p>如果有人问你最喜欢的是什么，你会怎么回答呢？可能有的朋友会说我喜欢玩游戏，而且我玩的贼溜；有的会说我喜欢吃，我对吃特别有研究；还有的朋友可能会说我喜欢旅游，只有不断地在路上才能使我开心……而我却不知道我喜欢什么。</p>
@@ -145,8 +145,8 @@ paste 锡膏层，开钢网时开的孔</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[3D打印记录]]></title>
-        <id>http://localhost:4000/post/3d-da-yin-ji-lu/</id>
-        <link href="http://localhost:4000/post/3d-da-yin-ji-lu/">
+        <id>http://yiwp9.github.io/post/3d-da-yin-ji-lu/</id>
+        <link href="http://yiwp9.github.io/post/3d-da-yin-ji-lu/">
         </link>
         <updated>2021-06-25T08:12:05.000Z</updated>
         <content type="html"><![CDATA[<h2 id="切片参数设置"><strong>切片参数设置</strong></h2>
@@ -158,19 +158,19 @@ paste 锡膏层，开钢网时开的孔</p>
 挤出速度 100<br>
 填充 10%</p>
 <p>平台不平、材料受潮、温度不对会导致打印特别粗糙，就像这种<br>
-<img src="http://localhost:4000/post-images/1624611549665.png" alt="" loading="lazy"></p>
+<img src="http://yiwp9.github.io/post-images/1624611549665.png" alt="" loading="lazy"></p>
 <p>petg 热床应该用东西垫着，否则会粘连，导致热床废掉，这里的金属热床则不需要垫子</p>
 <h2 id="补充"><strong>补充</strong></h2>
 <p>修改之后：<br>
-<img src="http://localhost:4000/post-images/1624672964163.jpg" alt="" loading="lazy"></p>
-<figure data-type="image" tabindex="1"><img src="http://localhost:4000/post-images/1624672970649.jpg" alt="" loading="lazy"></figure>
+<img src="http://yiwp9.github.io/post-images/1624672964163.jpg" alt="" loading="lazy"></p>
+<figure data-type="image" tabindex="1"><img src="http://yiwp9.github.io/post-images/1624672970649.jpg" alt="" loading="lazy"></figure>
 <p>效果好了很多，就是小的那个有一点移位，不知道是不是成老师粘了胶带的原因。晚点再打印试试。</p>
 ]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[Github + Gridea 搭建个人博客]]></title>
-        <id>http://localhost:4000/post/github-gridea-da-jian-ge-ren-bo-ke/</id>
-        <link href="http://localhost:4000/post/github-gridea-da-jian-ge-ren-bo-ke/">
+        <id>http://yiwp9.github.io/post/github-gridea-da-jian-ge-ren-bo-ke/</id>
+        <link href="http://yiwp9.github.io/post/github-gridea-da-jian-ge-ren-bo-ke/">
         </link>
         <updated>2021-06-22T11:09:10.000Z</updated>
         <content type="html"><![CDATA[<h1 id="一-条件"><strong>一、条件</strong></h1>
@@ -179,53 +179,53 @@ paste 锡膏层，开钢网时开的孔</p>
 <li>下载安装 Gridea <a href="https://gridea.dev/">链接</a></li>
 </ul>
 <h1 id="二-创建-github-仓库用于存储网页数据"><strong>二、创建 Github 仓库用于存储网页数据</strong></h1>
-<p><img src="http://localhost:4000/post-images/1624361974527.png" alt="" loading="lazy"><br>
-<img src="http://localhost:4000/post-images/1624362078240.png" alt="" loading="lazy"><br>
+<p><img src="http://yiwp9.github.io/post-images/1624361974527.png" alt="" loading="lazy"><br>
+<img src="http://yiwp9.github.io/post-images/1624362078240.png" alt="" loading="lazy"><br>
 此处因为我已经创建过名称为 yiwp9.github.io 的库了，所以提示不可用，如果你没创建过则不会报错，直接点创建即可。</p>
 <h1 id="三-获取仓库的-token"><strong>三、获取仓库的 token</strong></h1>
-<p><img src="http://localhost:4000/post-images/1624362992005.png" alt="" loading="lazy"><br>
-<img src="http://localhost:4000/post-images/1624362997739.png" alt="" loading="lazy"><br>
-<img src="http://localhost:4000/post-images/1624363003061.png" alt="" loading="lazy"><br>
-<img src="http://localhost:4000/post-images/1624363007040.png" alt="" loading="lazy"><br>
+<p><img src="http://yiwp9.github.io/post-images/1624362992005.png" alt="" loading="lazy"><br>
+<img src="http://yiwp9.github.io/post-images/1624362997739.png" alt="" loading="lazy"><br>
+<img src="http://yiwp9.github.io/post-images/1624363003061.png" alt="" loading="lazy"><br>
+<img src="http://yiwp9.github.io/post-images/1624363007040.png" alt="" loading="lazy"><br>
 记住生成的 token</p>
 <h1 id="四-配置-gridea"><strong>四、配置 Gridea</strong></h1>
-<figure data-type="image" tabindex="1"><img src="http://localhost:4000/post-images/1624363105092.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="http://yiwp9.github.io/post-images/1624363105092.png" alt="" loading="lazy"></figure>
 <h1 id="五-验证"><strong>五、验证</strong></h1>
 <p>在浏览器中输入 仓库的名称 （我这里是 yiwp9.github.io）即可看到页面</p>
-<figure data-type="image" tabindex="2"><img src="http://localhost:4000/post-images/1624363217273.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="http://yiwp9.github.io/post-images/1624363217273.png" alt="" loading="lazy"></figure>
 <h1 id="补充1"><strong>补充1</strong></h1>
 <h2 id="自定义域名"><strong>自定义域名</strong></h2>
 <ul>
 <li><strong>设置域名</strong></li>
 </ul>
 <p>进入项目设置选项，一直往下翻，找到 Github Pages<br>
-<img src="http://localhost:4000/post-images/1624439171684.png" alt="" loading="lazy"></p>
+<img src="http://yiwp9.github.io/post-images/1624439171684.png" alt="" loading="lazy"></p>
 <ul>
 <li>
 <p><strong>获取页面 ip</strong></p>
 </li>
 <li>
-<figure data-type="image" tabindex="3"><img src="http://localhost:4000/post-images/1624439315737.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="3"><img src="http://yiwp9.github.io/post-images/1624439315737.png" alt="" loading="lazy"></figure>
 </li>
 <li>
 <p><strong>域名解析</strong></p>
 </li>
 </ul>
 <p>到域名商网站进行解析，此处以阿里云作演示：<br>
-<img src="http://localhost:4000/post-images/1624439367527.png" alt="" loading="lazy"></p>
+<img src="http://yiwp9.github.io/post-images/1624439367527.png" alt="" loading="lazy"></p>
 <p>这样就可以通过 自定义的域名来访问站点了</p>
 <h1 id="补充2"><strong>补充2</strong></h1>
 <h2 id="添加评论功能"><strong>添加评论功能</strong></h2>
 <p>setting -&gt;  Developer settings -&gt; OAuth Apps  -&gt; New OAuth Apps<br>
-<img src="http://localhost:4000/post-images/1624540128346.png" alt="" loading="lazy"></p>
+<img src="http://yiwp9.github.io/post-images/1624540128346.png" alt="" loading="lazy"></p>
 <h1 id="补充3"><strong>补充3</strong></h1>
 <h2 id="删除底部的-rss图标"><strong>删除底部的 RSS图标</strong></h2>
-<figure data-type="image" tabindex="4"><img src="http://localhost:4000/post-images/1624343380604.jpeg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="http://yiwp9.github.io/post-images/1624343380604.jpeg" alt="" loading="lazy"></figure>
 <p>首先打开源文件下的 themes-&gt;notes-&gt;templates-&gt;includes 文件夹下的 footer.ejs .<br>
 删除如下代码，或更换为自己的代码。<br>
-<img src="http://localhost:4000/post-images/1624343605661.png" alt="" loading="lazy"></p>
+<img src="http://yiwp9.github.io/post-images/1624343605661.png" alt="" loading="lazy"></p>
 <p>这样就完成啦，效果如下：</p>
-<figure data-type="image" tabindex="5"><img src="http://localhost:4000/post-images/1624343707858.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="5"><img src="http://yiwp9.github.io/post-images/1624343707858.png" alt="" loading="lazy"></figure>
 <span id="busuanzi_container_page_pv">
   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
 </span>
@@ -233,8 +233,8 @@ paste 锡膏层，开钢网时开的孔</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>http://localhost:4000/post/hello-gridea/</id>
-        <link href="http://localhost:4000/post/hello-gridea/">
+        <id>http://yiwp9.github.io/post/hello-gridea/</id>
+        <link href="http://yiwp9.github.io/post/hello-gridea/">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
