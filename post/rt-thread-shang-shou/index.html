@@ -1,0 +1,295 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>RT-Thread 任务创建 | yiwp</title>
+<link rel="shortcut icon" href="http://yiwp9.github.io/favicon.ico?v=1635491163306">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="http://yiwp9.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="RT-Thread 任务创建 | yiwp - Atom Feed" href="http://yiwp9.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxxxx-x"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-xxxxxxxx-x');
+</script>
+
+
+    <meta name="description" content="以 PWM 为例进行说明：
+静态任务
+static uint8_t PWM_Thread_Stack[1024];   //pwm 任务的栈的大小
+static void PWM_Thread_Entry(void *para); // p..." />
+    <meta name="keywords" content="RT-Thread" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="http://yiwp9.github.io">
+  <img class="avatar" src="http://yiwp9.github.io/images/avatar.png?v=1635491163306" alt="">
+  </a>
+  <h1 class="site-title">
+    yiwp
+  </h1>
+  <p class="site-description">
+    温故而知新
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/yiwp9" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              RT-Thread 任务创建
+            </h2>
+            <div class="post-info">
+              <span>
+                2021-10-07
+              </span>
+              <span>
+                3 min read
+              </span>
+              
+                <a href="http://yiwp9.github.io/tag/zjldmOtKv/" class="post-tag">
+                  # RT-Thread
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="http://yiwp9.github.io/post-images/rt-thread-shang-shou.png" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>以 PWM 为例进行说明：</p>
+<h3 id="静态任务">静态任务</h3>
+<pre><code class="language-c">static uint8_t PWM_Thread_Stack[1024];   //pwm 任务的栈的大小
+static void PWM_Thread_Entry(void *para); // pwm 任务的入口函数
+static struct rt_thread pwm_thread; //静态任务 pwm 的任务块
+</code></pre>
+<h4 id="任务初始化">任务初始化</h4>
+<pre><code class="language-c">    //初始化 pwm 任务， 启动 pwm 任务
+    int Pwm_Thread_Init(void)
+    {           
+         // 任务块     任务名     任务入口函数    任务参数   任务栈首地址    任务栈大小   优先级    时间片
+        rt_thread_init(&amp;pwm_thread, &quot;pwm_thread&quot;, PWM_Thread_Entry, RT_NULL, &amp;PWM_Thread_Stack[0], sizeof(PWM_Thread_Stack), 10, 10);                       
+        //当两个任务优先级相同时，则按时间片轮流执行，比如 任务 A 时间片为 10个节拍，任务B           的时间片为5 个节拍，则  A 运行 10 个节拍然后B运行 5 个节拍，如此循环
+        rt_thread_startup(&amp;pwm_thread);//启动任务
+        return 0;
+    }
+</code></pre>
+<h4 id="任务入口">任务入口</h4>
+<pre><code class="language-c">    //pwm 任务入口
+    static void PWM_Thread_Entry(void *para)
+    {
+        Pwm_Init();
+        while (1)
+        {
+            /*使 RGB 灯红灯闪烁*/
+            for (int var = 0; var &lt; period; var += 10000)
+            {
+                rt_pwm_set(pwm_dev, PWM_DEV_CHANNEL, period, var);
+                rt_thread_mdelay(200);
+            }
+        }
+    }
+</code></pre>
+<h4 id="添加任务到终端调试">添加任务到终端调试</h4>
+<pre><code class="language-c">//将 pwm 任务加入到终端调试，在终端中执行 Pwm_Thread_Init 就会执行 pwm 任务，也可以不添加，直接在 main 里执行  Pwm_Thread_Init 也能执行
+INIT_APP_EXPORT(Pwm_Thread_Init);
+</code></pre>
+<h3 id="动态任务">动态任务</h3>
+<pre><code class="language-c">//创建线程启动函数，用于启动上一步编写的线程主体
+static int Thread_RGB(void)
+{
+    rt_thread_t thread = RT_NULL;
+    thread = rt_thread_create(&quot;rgb&quot;, rgb_thread_entry, RT_NULL, 512, 10, 10);
+    if (thread == RT_NULL)
+    {
+        rt_kprintf(&quot;Thread_GRB Init ERROR&quot;);
+        return RT_ERROR;
+    }
+    rt_thread_startup(thread);
+}
+</code></pre>
+<h3 id="静态任务与动态任务对比">静态任务与动态任务对比</h3>
+<p>使用静态线程时，必须先定义静态的线程控制块，并且定义好堆栈空间，然后调用rt_thread_init（） 来完成线程的初始化工作。采用这种方式，线程控制块和堆栈占用的内存会放在 RW/ZI 段，这段空间在编译时就已经确定，它不是可以动态分配的，所以不能被释放，而只能使用 rt_thread_detach() 函数将该线程控制块从对象管理器中脱离。</p>
+<p>使用动态定义方式 rt_thread_create() 时， RT-Thread 会动态申请线程控制块和堆栈空间。在编译时， 编译器是不会感知到这段空间的，只有在程序运行时， RT-Thread 才会从系统堆中申请分配这段内存空间，当不需要使用该线程时，调用 rt_thread_delete() 函数就会将这段申请的内存空间重新释放到内存堆中。</p>
+<p>这两种方式各有利弊，静态定义方式会占用 RW/ZI 空间，但是不需要动态分配内存，运行时效率较高，实时性较好。 动态方式不会占用额外的 RW/ZI 空间，占用空间小，但是运行时需要动态分配内存，效率没有静态方式高。 总的来说，这两种方式就是空间和时间效率的平衡，可以根据实际环境需求选择采用具体的分配方式。</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E9%9D%99%E6%80%81%E4%BB%BB%E5%8A%A1">静态任务</a>
+<ul>
+<li><a href="#%E4%BB%BB%E5%8A%A1%E5%88%9D%E5%A7%8B%E5%8C%96">任务初始化</a></li>
+<li><a href="#%E4%BB%BB%E5%8A%A1%E5%85%A5%E5%8F%A3">任务入口</a></li>
+<li><a href="#%E6%B7%BB%E5%8A%A0%E4%BB%BB%E5%8A%A1%E5%88%B0%E7%BB%88%E7%AB%AF%E8%B0%83%E8%AF%95">添加任务到终端调试</a></li>
+</ul>
+</li>
+<li><a href="#%E5%8A%A8%E6%80%81%E4%BB%BB%E5%8A%A1">动态任务</a></li>
+<li><a href="#%E9%9D%99%E6%80%81%E4%BB%BB%E5%8A%A1%E4%B8%8E%E5%8A%A8%E6%80%81%E4%BB%BB%E5%8A%A1%E5%AF%B9%E6%AF%94">静态任务与动态任务对比</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="http://yiwp9.github.io/post/zhong-nian-ren-de-te-zheng/">
+              <h3 class="post-title">
+                中年人的特征
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: 'be04de5e0bd367444227',
+    clientSecret: '4ba00b9d6d5942389232f9a7b9f24c82c1f20198',
+    repo: 'yiwp9.github.io',
+    owner: 'yiwp',
+    admin: ['yiwp'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+        <!--
+ * @Author: your name
+ * @Date: 2021-06-22 12:26:55
+ * @LastEditTime: 2021-06-22 14:27:33
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \undefinede:\onDriveScuec\OneDrive - scuec.edu.cn\mySiteSourceFile\themes\notes\templates\includes\footer.ejs
+-->
+
+
+<div class="site-footer">
+ 
+  Powered by yiwp
+  
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
