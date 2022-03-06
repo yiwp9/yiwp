@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://yiwp9.github.io</id>
     <title>yiwp</title>
-    <updated>2022-01-12T10:56:49.247Z</updated>
+    <updated>2022-03-06T07:18:15.101Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://yiwp9.github.io"/>
     <link rel="self" href="http://yiwp9.github.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>http://yiwp9.github.io/images/avatar.png</logo>
     <icon>http://yiwp9.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, yiwp</rights>
+    <entry>
+        <title type="html"><![CDATA[多台电脑公用一套键鼠]]></title>
+        <id>http://yiwp9.github.io/post/ISWOWnTkB/</id>
+        <link href="http://yiwp9.github.io/post/ISWOWnTkB/">
+        </link>
+        <updated>2022-03-06T07:07:13.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[关于uniapp和小程序的个人记录]]></title>
         <id>http://yiwp9.github.io/post/87_tfapGw/</id>
@@ -76,16 +83,5 @@
         <link href="http://yiwp9.github.io/post/youtube-shi-pin-ban-yun-fan-yi-tian-jia-zi-mu/">
         </link>
         <updated>2021-08-25T13:04:23.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[win10 网络状态变成一条虚线的解决方法]]></title>
-        <id>http://yiwp9.github.io/post/win10-wang-luo-zhuang-tai-bian-cheng-yi-tiao-xu-xian-de-jie-jue-fang-fa/</id>
-        <link href="http://yiwp9.github.io/post/win10-wang-luo-zhuang-tai-bian-cheng-yi-tiao-xu-xian-de-jie-jue-fang-fa/">
-        </link>
-        <updated>2021-08-09T01:47:46.000Z</updated>
-        <summary type="html"><![CDATA[<p><code>本文参考：https://blog.csdn.net/qq_41489527/article/details/109502016</code></p>
-]]></summary>
-        <content type="html"><![CDATA[<p><code>本文参考：https://blog.csdn.net/qq_41489527/article/details/109502016</code></p>
-]]></content>
     </entry>
 </feed>
