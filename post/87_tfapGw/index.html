@@ -1,116 +1,98 @@
+
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" >
+    
+<meta charset="utf-8" >
 
 <title>关于uniapp和小程序的个人记录 | yiwp</title>
+<meta name="description" content="温故而知新">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.0/css/all.min.css">
-<link rel="shortcut icon" href="http://yiwp9.github.io/favicon.ico?v=1651112353106">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="http://yiwp9.github.io/favicon.ico?v=1651112449540">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="http://yiwp9.github.io/styles/main.css">
 
 
-
-
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
   
 
   
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
 
 
-    <meta name="description" content="    
-
-这里所说的小程序指微信小程序、QQ小程序、字节跳动小程序、阿里小程序、百度小程序等十多个平台的小程序。
-
-一、前言
-
-1、最早接触到小程序是 17 年七八月份，当始我正对安卓感兴趣学着玩玩，后来一同学跟我讲他被公司要求开发小程序..." />
-    <meta name="keywords" content="" />
   </head>
   <body>
     <div id="app" class="main">
-
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="http://yiwp9.github.io">
-        <img src="http://yiwp9.github.io/images/avatar.png?v=1651112353106" class="site-logo">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="http://yiwp9.github.io">
+        <img class="avatar" src="http://yiwp9.github.io/images/avatar.png?v=1651112449540" alt="" width="32px" height="32px">
+      </a>
+      <a href="http://yiwp9.github.io">
         <h1 class="site-title">yiwp</h1>
       </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
-      </div>
     </div>
-    <div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
       
         
-          <a href="/" class="site-nav">
+          <a href="/" class="menu purple-link">
             首页
           </a>
         
       
         
-          <a href="/archives" class="site-nav">
+          <a href="/archives" class="menu purple-link">
             归档
           </a>
         
       
         
-          <a href="/tags" class="site-nav">
+          <a href="/tags" class="menu purple-link">
             标签
           </a>
         
       
         
-          <a href="/post/about" class="site-nav">
+          <a href="/post/about" class="menu purple-link">
             关于
           </a>
         
       
     </div>
   </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="social-container">
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <div class="site-description">
-      温故而知新
-    </div>
-    <div class="site-footer">
-      Powered by yiwp | <a class="rss" href="http://yiwp9.github.io/atom.xml" target="_blank">RSS</a>
-    </div>
-  </div>
-</div>
+</transition>
 
 
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          <div class="post-detail">
-            <h2 class="post-title">关于uniapp和小程序的个人记录</h2>
-            <div class="post-date">2022-01-12</div>
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">关于uniapp和小程序的个人记录</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2022-01-12</span>
             
-            <div class="post-content" v-pre>
-              <p><img src="https://img.shields.io/badge/-zyn--yiwp-critical" alt="" loading="lazy">    <img src="https://img.shields.io/badge/-%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95-orange" alt="" loading="lazy"></p>
+          </div>
+          <div class="post-content">
+            <p><img src="https://img.shields.io/badge/-zyn--yiwp-critical" alt="" loading="lazy">    <img src="https://img.shields.io/badge/-%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95-orange" alt="" loading="lazy"></p>
 <blockquote>
 <p>这里所说的小程序指微信小程序、QQ小程序、字节跳动小程序、阿里小程序、百度小程序等十多个平台的小程序。</p>
 </blockquote>
@@ -146,37 +128,51 @@
 <p>对于项目比较复杂的情况下可以直接使用原生小程序，如果有多端需求同时项目又比较简单的话使用 uniapp 是一个十分不错的选择。就比如我自己，我是希望我的小程序能够同时发布在各个平台，毕竟不是专职程序员，只是从兴趣来做的，这样能够节省不少精力，因此我选择 uniapp。</p>
 <p>最后再说一句，兴趣太广也不好嵌入式软硬件、前端、后端、文学、骑行、电子游戏、发呆……，太多的兴趣只会搞得自己一事无成，好像当一个每天喝喝茶，陪陪家人，散散步，写点随笔的人呀。自在，自在的生活！</p>
 
-            </div>
-            
-            
-              <div class="next-post">
-                <div class="next">下一篇</div>
-                <a href="http://yiwp9.github.io/post/AHwvtR_oA/">
-                  <h3 class="post-title">
-                    成老师的带传感器信息的拍照想法
-                  </h3>
-                </a>
-              </div>
-            
-
-            
-              
-                <div id="gitalk-container" data-aos="fade-in"></div>
-              
-
-              
-            
-
           </div>
-
         </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="http://yiwp9.github.io/post/AHwvtR_oA/">
+              <h3 class="post-title">
+                下一篇：成老师的带传感器信息的拍照想法
+              </h3>
+            </a>
+          </div>
+          
       </div>
+
+      
+        
+          <div id="gitalk-container"></div>
+        
+
+        
+      
+
+      <div class="site-footer">
+  <div class="slogan">温故而知新</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by yiwp | <a class="rss" href="http://yiwp9.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
     </div>
+    <script type="application/javascript">
 
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.min.js"></script>
-<script type="application/javascript">
-
-AOS.init();
+hljs.initHighlightingOnLoad()
 
 var app = new Vue({
   el: '#app',
@@ -189,10 +185,8 @@ var app = new Vue({
 
 
 
-
-
   
-    <script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
     <script>
 
       var gitalk = new Gitalk({
