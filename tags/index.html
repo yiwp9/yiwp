@@ -1,114 +1,125 @@
+<!DOCTYPE html>
 <html>
   <head>
-  <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>yiwp</title>
-<link rel="shortcut icon" href="http://yiwp9.github.io/favicon.ico?v=1646551091662">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+    <meta charset="utf-8" >
+
+<title>标签列表 | yiwp</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="http://yiwp9.github.io/favicon.ico?v=1651111617704">
 <link rel="stylesheet" href="http://yiwp9.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="yiwp - Atom Feed" href="http://yiwp9.github.io/atom.xml">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxxxx-x"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-xxxxxxxx-x');
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="温故而知新">
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="http://yiwp9.github.io">
+        <img src="http://yiwp9.github.io/images/avatar.png?v=1651111617704" class="site-logo">
+        <h1 class="site-title">yiwp</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      温故而知新
+    </div>
+    <div class="site-footer">
+      Powered by yiwp | <a class="rss" href="http://yiwp9.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <h2 class="tag-list-title">标签列表</h2>
+          <div class="tags-container">
+            
+              <a class="tag" href="http://yiwp9.github.io/tag/Nqwj4gzc7/">随笔</a>
+            
+              <a class="tag" href="http://yiwp9.github.io/tag/zjldmOtKv/">RT-Thread</a>
+            
+              <a class="tag" href="http://yiwp9.github.io/tag/BMN7g0Kpy/">Gridea</a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
 </script>
 
 
-  <meta name="description" content="温故而知新" />
-  </head>
-  <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="http://yiwp9.github.io">
-  <img class="avatar" src="http://yiwp9.github.io/images/avatar.png?v=1646551091662" alt="">
-  </a>
-  <h1 class="site-title">
-    yiwp
-  </h1>
-  <p class="site-description">
-    温故而知新
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
-  </div>
-  <div class="social-container">
-    
-      
-        <a href="https://github.com/yiwp9" target="_blank">
-          <i class="ri-github-line"></i>
-        </a>
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  </div>
-</div>
 
 
-        <div class="tags-container">
-          
-            <a class="tag" href="http://yiwp9.github.io/tag/Nqwj4gzc7/">随笔</a>
-          
-            <a class="tag" href="http://yiwp9.github.io/tag/zjldmOtKv/">RT-Thread</a>
-          
-            <a class="tag" href="http://yiwp9.github.io/tag/BMN7g0Kpy/">Gridea</a>
-          
-        </div>
-
-        <!--
- * @Author: your name
- * @Date: 2021-06-22 12:26:55
- * @LastEditTime: 2021-06-22 14:27:33
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \undefinede:\onDriveScuec\OneDrive - scuec.edu.cn\mySiteSourceFile\themes\notes\templates\includes\footer.ejs
--->
 
 
-<div class="site-footer">
- 
-  Powered by yiwp
-  
-</div>
-
-      </div>
-    </div>
   </body>
 </html>

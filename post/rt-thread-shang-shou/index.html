@@ -1,23 +1,27 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" >
+
 <title>RT-Thread 任务创建 | yiwp</title>
-<link rel="shortcut icon" href="http://yiwp9.github.io/favicon.ico?v=1646551091662">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="http://yiwp9.github.io/favicon.ico?v=1651111617704">
 <link rel="stylesheet" href="http://yiwp9.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="RT-Thread 任务创建 | yiwp - Atom Feed" href="http://yiwp9.github.io/atom.xml">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxxxx-x"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
 
-  gtag('config', 'UA-xxxxxxxx-x');
-</script>
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
 
 
     <meta name="description" content="以 PWM 为例进行说明：
@@ -25,92 +29,84 @@
 static uint8_t PWM_Thread_Stack[1024];   //pwm 任务的栈的大小
 static void PWM_Thread_Entry(void *para); // p..." />
     <meta name="keywords" content="RT-Thread" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="http://yiwp9.github.io">
-  <img class="avatar" src="http://yiwp9.github.io/images/avatar.png?v=1646551091662" alt="">
-  </a>
-  <h1 class="site-title">
-    yiwp
-  </h1>
-  <p class="site-description">
-    温故而知新
-  </p>
-  <div class="menu-container">
-    
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="http://yiwp9.github.io">
+        <img src="http://yiwp9.github.io/images/avatar.png?v=1651111617704" class="site-logo">
+        <h1 class="site-title">yiwp</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
       
-        <a href="/" class="menu">
-          首页
-        </a>
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
       
-    
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
       
-        <a href="/archives" class="menu">
-          归档
-        </a>
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
       
-    
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
       
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
+    </div>
   </div>
-  <div class="social-container">
-    
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
       
-        <a href="https://github.com/yiwp9" target="_blank">
-          <i class="ri-github-line"></i>
-        </a>
+        
       
-    
+        
       
-    
+        
       
-    
+        
       
-    
+        
       
-    
+    </div>
+    <div class="site-description">
+      温故而知新
+    </div>
+    <div class="site-footer">
+      Powered by yiwp | <a class="rss" href="http://yiwp9.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
   </div>
 </div>
 
-        <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              RT-Thread 任务创建
-            </h2>
-            <div class="post-info">
-              <span>
-                2021-10-07
-              </span>
-              <span>
-                3 min read
-              </span>
-              
-                <a href="http://yiwp9.github.io/tag/zjldmOtKv/" class="post-tag">
-                  # RT-Thread
-                </a>
-              
-            </div>
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">RT-Thread 任务创建</h2>
+            <div class="post-date">2021-10-07</div>
             
-              <img class="post-feature-image" src="http://yiwp9.github.io/post-images/rt-thread-shang-shou.png" alt="">
+              <div class="feature-container" style="background-image: url('http://yiwp9.github.io/post-images/rt-thread-shang-shou.png')">
+              </div>
             
-            <div class="post-content-wrapper">
-              <div class="post-content">
-                <p>以 PWM 为例进行说明：</p>
+            <div class="post-content" v-pre>
+              <p>以 PWM 为例进行说明：</p>
 <h3 id="静态任务">静态任务</h3>
 <pre><code class="language-c">static uint8_t PWM_Thread_Stack[1024];   //pwm 任务的栈的大小
 static void PWM_Thread_Entry(void *para); // pwm 任务的入口函数
@@ -166,130 +162,82 @@ static int Thread_RGB(void)
 <p>使用动态定义方式 rt_thread_create() 时， RT-Thread 会动态申请线程控制块和堆栈空间。在编译时， 编译器是不会感知到这段空间的，只有在程序运行时， RT-Thread 才会从系统堆中申请分配这段内存空间，当不需要使用该线程时，调用 rt_thread_delete() 函数就会将这段申请的内存空间重新释放到内存堆中。</p>
 <p>这两种方式各有利弊，静态定义方式会占用 RW/ZI 空间，但是不需要动态分配内存，运行时效率较高，实时性较好。 动态方式不会占用额外的 RW/ZI 空间，占用空间小，但是运行时需要动态分配内存，效率没有静态方式高。 总的来说，这两种方式就是空间和时间效率的平衡，可以根据实际环境需求选择采用具体的分配方式。</p>
 
-              </div>
-              <div class="toc-container">
-                <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#%E9%9D%99%E6%80%81%E4%BB%BB%E5%8A%A1">静态任务</a>
-<ul>
-<li><a href="#%E4%BB%BB%E5%8A%A1%E5%88%9D%E5%A7%8B%E5%8C%96">任务初始化</a></li>
-<li><a href="#%E4%BB%BB%E5%8A%A1%E5%85%A5%E5%8F%A3">任务入口</a></li>
-<li><a href="#%E6%B7%BB%E5%8A%A0%E4%BB%BB%E5%8A%A1%E5%88%B0%E7%BB%88%E7%AB%AF%E8%B0%83%E8%AF%95">添加任务到终端调试</a></li>
-</ul>
-</li>
-<li><a href="#%E5%8A%A8%E6%80%81%E4%BB%BB%E5%8A%A1">动态任务</a></li>
-<li><a href="#%E9%9D%99%E6%80%81%E4%BB%BB%E5%8A%A1%E4%B8%8E%E5%8A%A8%E6%80%81%E4%BB%BB%E5%8A%A1%E5%AF%B9%E6%AF%94">静态任务与动态任务对比</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-              </div>
             </div>
-          </article>
-        </div>
+            
+              <div class="tag-container">
+                
+                  <a href="http://yiwp9.github.io/tag/zjldmOtKv/" class="tag">
+                    RT-Thread
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="http://yiwp9.github.io/post/zhong-nian-ren-de-te-zheng/">
+                  <h3 class="post-title">
+                    中年人的特征
+                  </h3>
+                </a>
+              </div>
+            
 
-        
-          <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="http://yiwp9.github.io/post/zhong-nian-ren-de-te-zheng/">
-              <h3 class="post-title">
-                中年人的特征
-              </h3>
-            </a>
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
           </div>
-        
 
-        
-          
-            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-
-<div id="gitalk-container"></div>
-
-<script>
-
-  var gitalk = new Gitalk({
-    clientID: 'be04de5e0bd367444227',
-    clientSecret: '4ba00b9d6d5942389232f9a7b9f24c82c1f20198',
-    repo: 'yiwp9.github.io',
-    owner: 'yiwp',
-    admin: ['yiwp'],
-    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
-    distractionFreeMode: false  // Facebook-like distraction free mode
-  })
-
-  gitalk.render('gitalk-container')
-
-</script>
-
-          
-
-          
-        
-
-        <!--
- * @Author: your name
- * @Date: 2021-06-22 12:26:55
- * @LastEditTime: 2021-06-22 14:27:33
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \undefinede:\onDriveScuec\OneDrive - scuec.edu.cn\mySiteSourceFile\themes\notes\templates\includes\footer.ejs
--->
-
-
-<div class="site-footer">
- 
-  Powered by yiwp
-  
-</div>
-
+        </div>
       </div>
     </div>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
     <script>
-      hljs.initHighlightingOnLoad()
 
-      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+      var gitalk = new Gitalk({
+        clientID: 'be04de5e0bd367444227',
+        clientSecret: '4ba00b9d6d5942389232f9a7b9f24c82c1f20198',
+        repo: 'yiwp9.github.io',
+        owner: 'yiwp',
+        admin: ['yiwp'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
 
-      // This should probably be throttled.
-      // Especially because it triggers during smooth scrolling.
-      // https://lodash.com/docs/4.17.10#throttle
-      // You could do like...
-      // window.addEventListener("scroll", () => {
-      //    _.throttle(doThatStuff, 100);
-      // });
-      // Only not doing it here to keep this Pen dependency-free.
-
-      window.addEventListener("scroll", event => {
-        let fromTop = window.scrollY;
-
-        mainNavLinks.forEach((link, index) => {
-          let section = document.getElementById(decodeURI(link.hash).substring(1));
-          let nextSection = null
-          if (mainNavLinks[index + 1]) {
-            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-          }
-          if (section.offsetTop <= fromTop) {
-            if (nextSection) {
-              if (nextSection.offsetTop > fromTop) {
-                link.classList.add("current");
-              } else {
-                link.classList.remove("current");    
-              }
-            } else {
-              link.classList.add("current");
-            }
-          } else {
-            link.classList.remove("current");
-          }
-        });
-      });
+      gitalk.render('gitalk-container')
 
     </script>
+  
+
+  
+
+
+
+
   </body>
 </html>

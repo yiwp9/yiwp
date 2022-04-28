@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://yiwp9.github.io</id>
     <title>yiwp</title>
-    <updated>2022-03-06T07:18:15.101Z</updated>
+    <updated>2022-04-28T02:07:00.979Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://yiwp9.github.io"/>
     <link rel="self" href="http://yiwp9.github.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>http://yiwp9.github.io/images/avatar.png</logo>
     <icon>http://yiwp9.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, yiwp</rights>
+    <entry>
+        <title type="html"><![CDATA[MicroPython固件烧录]]></title>
+        <id>http://yiwp9.github.io/post/9azrCAOVo/</id>
+        <link href="http://yiwp9.github.io/post/9azrCAOVo/">
+        </link>
+        <updated>2022-04-25T03:04:02.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[多台电脑公用一套键鼠]]></title>
         <id>http://yiwp9.github.io/post/ISWOWnTkB/</id>
@@ -76,12 +83,5 @@
         <link href="http://yiwp9.github.io/post/mqtt-xie-yi/">
         </link>
         <updated>2021-09-07T03:17:20.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[youtube 视频搬运、翻译、添加字幕]]></title>
-        <id>http://yiwp9.github.io/post/youtube-shi-pin-ban-yun-fan-yi-tian-jia-zi-mu/</id>
-        <link href="http://yiwp9.github.io/post/youtube-shi-pin-ban-yun-fan-yi-tian-jia-zi-mu/">
-        </link>
-        <updated>2021-08-25T13:04:23.000Z</updated>
     </entry>
 </feed>

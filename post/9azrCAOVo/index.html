@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>电阻 0603 封装是什么意思 | yiwp</title>
+<title>MicroPython固件烧录 | yiwp</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -24,10 +24,12 @@
 
 
 
-    <meta name="description" content="前两位与后两位分别表示电阻的长与宽，以英寸为单位
-即 06 表示 0.06inch = 1.524mm， 0.03inch = 0.762mm
-注意：封装尺寸是实物封装的尺寸，不是焊盘的或者pcb封装图的尺寸，pcb封装图的尺寸会稍微大些
-..." />
+    <meta name="description" content="一、 固件下载
+下载网站：https://micropython.org/download/
+找到ESP8266
+选择相应版本随便下载一个即可
+二、使用软件烧录
+使用 flash_download_tool_3.9.2_0 进行烧录固件，烧..." />
     <meta name="keywords" content="" />
   </head>
   <body>
@@ -99,26 +101,41 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">电阻 0603 封装是什么意思</h2>
-            <div class="post-date">2021-07-28</div>
+            <h2 class="post-title">MicroPython固件烧录</h2>
+            <div class="post-date">2022-04-25</div>
             
             <div class="post-content" v-pre>
-              <p>前两位与后两位分别表示电阻的长与宽，以英寸为单位<br>
-即 06 表示 0.06inch = 1.524mm， 0.03inch = 0.762mm<br>
-注意：封装尺寸是实物封装的尺寸，不是焊盘的或者pcb封装图的尺寸，pcb封装图的尺寸会稍微大些</p>
-<figure data-type="image" tabindex="1"><img src="http://yiwp9.github.io/post-images/1627436715029.png" alt="" loading="lazy"></figure>
-<p>其他像 0805、1206也是这个意思</p>
-<p>mask 阻焊层，不喷绿油<br>
-paste 锡膏层，开钢网时开的孔</p>
+              <p>一、 固件下载<br>
+下载网站：https://micropython.org/download/<br>
+找到ESP8266<br>
+选择相应版本随便下载一个即可</p>
+<p>二、使用软件烧录<br>
+使用 flash_download_tool_3.9.2_0 进行烧录固件，烧录成功了，但是最后一直没法正常运行。串口不停地往外发数据，而且全是乱码，同时ESP8266板载LED快速闪烁（没截图，只能描述一下）。此方案本人烧录固件后无法使用，因此放弃。</p>
+<p>三、使用命令烧录<br>
+在使用乐鑫官方的烧录工具烧录不成功之后，按照 microPython 官方的介绍，采用命令进行烧录固件，最终成功运行了，步骤如下：</p>
+<p>①打开命令提示符并输入：<br>
+pip install esptool</p>
+<p>②安装成功后查看esptool版本，在命令提示符中输入：<br>
+esptool version</p>
+<p>③擦除芯片，命令窗输入：</p>
+<p>esptool --port +你的串口号 erase_flash<br>
+如：<br>
+esptool --port COM6 erase_flash</p>
+<p>④开始烧录固件，命令窗输入：</p>
+<p>esptool --port+你的端口号 --baud +波特率 write_flash --flash_size=detect 0 固件路径<br>
+如：<br>
+esptool --port COM6 --baud 460800 write_flash --flash_size=detect 0 E:\masterLif\6-embedded_workspace\microPython\esp8266-1m-20220117-v1.18.bin</p>
+<p>⑤至此固件烧录已完成，连接esp8266测试下：</p>
+<p>四、下载代码试试</p>
 
             </div>
             
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="http://yiwp9.github.io/post/yong-c-yu-yan-bian-xie-zi-ji-de-arduino-ku/">
+                <a href="http://yiwp9.github.io/post/ISWOWnTkB/">
                   <h3 class="post-title">
-                    用 C 语言编写自己的 Arduino 库
+                    多台电脑公用一套键鼠
                   </h3>
                 </a>
               </div>
