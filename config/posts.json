@@ -1,0 +1,426 @@
+{
+  "posts": [
+    {
+      "content": "康有为的《大同书》里，记载了他第一遇见黑人时的感受，“然黑人之神，腥不可闻。故大同之世，白人黄人，才能形状，相去不远，可以平等。其黑人之形状也，铁面银牙，斜额如猪，直视如牛，满胸长毛，手足深黑，蠢若羊豕，望之生畏。”至于如何对待这些黑人，康有为写道：“其棕黑人有性情太恶，或有疾者，医者引其断嗣之药，以绝其种。”",
+      "data": {
+        "title": "康",
+        "date": "2022-05-06 12:02:55",
+        "tags": [],
+        "published": true,
+        "hideInList": false,
+        "feature": null,
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "",
+      "fileName": "kang"
+    },
+    {
+      "content": "\r\n一、 固件下载\r\n下载网站：https://micropython.org/download/\r\n找到ESP8266\r\n选择相应版本随便下载一个即可\r\n\r\n二、使用软件烧录\r\n使用 flash_download_tool_3.9.2_0 进行烧录固件，烧录成功了，但是最后一直没法正常运行。串口不停地往外发数据，而且全是乱码，同时ESP8266板载LED快速闪烁（没截图，只能描述一下）。此方案本人烧录固件后无法使用，因此放弃。\r\n\r\n三、使用命令烧录\r\n在使用乐鑫官方的烧录工具烧录不成功之后，按照 microPython 官方的介绍，采用命令进行烧录固件，最终成功运行了，步骤如下：\r\n\r\n①打开命令提示符并输入：\r\npip install esptool\r\n\r\n②安装成功后查看esptool版本，在命令提示符中输入：\r\nesptool version\r\n\r\n③擦除芯片，命令窗输入：\r\n\r\nesptool --port +你的串口号 erase_flash\r\n如：\r\nesptool --port COM6 erase_flash\r\n\r\n④开始烧录固件，命令窗输入：\r\n\r\nesptool --port+你的端口号 --baud +波特率 write_flash --flash_size=detect 0 固件路径\r\n如：\r\nesptool --port COM6 --baud 460800 write_flash --flash_size=detect 0 E:\\masterLif\\6-embedded_workspace\\microPython\\esp8266-1m-20220117-v1.18.bin\r\n\r\n⑤至此固件烧录已完成，连接esp8266测试下：\r\n\r\n四、下载代码试试  \r\n\r\n\r\n",
+      "data": {
+        "title": "MicroPython固件烧录",
+        "date": "2022-04-25 11:04:02",
+        "tags": [],
+        "published": true,
+        "hideInList": false,
+        "feature": null,
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "",
+      "fileName": "9azrCAOVo"
+    },
+    {
+      "content": "一、工具\r\n- 两台电脑\r\n- Mouse Without Borders （下载链接：https://www.microsoft.com/en-us/download/confirmation.aspx?id=35460）\r\n\r\n二、工具安装\r\n两台电脑分别安装 Mouse Without Borders\r\n\r\n三、配置\r\n主设备\r\n![](http://yiwp9.github.io/post-images/1646550659257.png)\r\n![](http://yiwp9.github.io/post-images/1646550664902.png)\r\n\r\n\r\n从设备\r\n![](http://yiwp9.github.io/post-images/1646550997466.png)\r\n![](http://yiwp9.github.io/post-images/1646551003267.png)\r\n![](http://yiwp9.github.io/post-images/1646551009887.png)\r\n\r\n四、还可共享剪切板\r\n直接右键复制即可",
+      "data": {
+        "title": "多台电脑公用一套键鼠",
+        "date": "2022-03-06 15:07:13",
+        "tags": [],
+        "published": true,
+        "hideInList": false,
+        "feature": null,
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "",
+      "fileName": "ISWOWnTkB"
+    },
+    {
+      "content": "\r\n![](https://img.shields.io/badge/-zyn--yiwp-critical)    ![](https://img.shields.io/badge/-%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95-orange)\r\n\r\n> 这里所说的小程序指微信小程序、QQ小程序、字节跳动小程序、阿里小程序、百度小程序等十多个平台的小程序。\r\n\r\n## **一、前言**\r\n> 1、最早接触到小程序是 17 年七八月份，当始我正对安卓感兴趣学着玩玩，后来一同学跟我讲他被公司要求开发小程序，硬着头皮搞了两个月就搞出来了，还给我推荐说小程序入门特别简单，上手超快。\r\n> 2、于是我抱着玩一玩的态度下载了微信小程序开发者工具，经过一番体验确实如我同学所说，上手超简单，写了个字典小程序练练手。\r\n> 3、不过由于我的本职是嵌入式硬件，后来也就没有继续学习小程序；\r\n> 4、最近无意中发现 uniapp，也上手体验了一下，于是决定记录一下，以便以后翻看。\r\n\r\n\r\n## **二、小程序的特点**\r\n\r\n小程序的理念在于：\r\n- 无需下载安装，仅需要在相应平台中直接点击就可以使用（即用即走）\r\n- 开发效率高，简单项目可能几天或者一两周就能完工\r\n- 平台流量扶持\r\n- 跨平台（Android、ios 都可使用，现在 windows、mac 端也可以使用小程序了）\r\n\r\n但小程序也有局限性：\r\n- 依赖平台，不同平台之间有差异，比如微信小程序没法发布到抖音、百度或者其他平台\r\n\r\n## **三、uniapp的特点**\r\n- 采用 VUE框架开发\r\n- 一套代码可以发布到 13 个平台（虽然还是有局限性，不过对于我这个没有复杂要求的开发者已经非常好了）\r\n- 与阿里腾讯合作，提供部分免费云服务\r\n\r\n\r\n## 四、总结\r\n\r\n> 我也只是个新手，对于原生小程序和 uniapp 都不是很熟练，因此也只写了特别少的内容。\r\n\r\n对于项目比较复杂的情况下可以直接使用原生小程序，如果有多端需求同时项目又比较简单的话使用 uniapp 是一个十分不错的选择。就比如我自己，我是希望我的小程序能够同时发布在各个平台，毕竟不是专职程序员，只是从兴趣来做的，这样能够节省不少精力，因此我选择 uniapp。\r\n\r\n最后再说一句，兴趣太广也不好嵌入式软硬件、前端、后端、文学、骑行、电子游戏、发呆……，太多的兴趣只会搞得自己一事无成，好像当一个每天喝喝茶，陪陪家人，散散步，写点随笔的人呀。自在，自在的生活！\r\n\r\n\r\n",
+      "data": {
+        "title": "关于uniapp和小程序的个人记录",
+        "date": "2022-01-12 18:55:07",
+        "tags": [],
+        "published": true,
+        "hideInList": false,
+        "feature": null,
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "",
+      "fileName": "87_tfapGw"
+    },
+    {
+      "content": "![](https://img.shields.io/badge/-zyn--yiwp-critical)    ![](https://img.shields.io/badge/-%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95-orange)\r\n\r\n### 一、起源与功能介绍\r\n\r\n#### **来源**\r\n上周聊到无人机相关话题。成老师就提起他之前有写过一套算法，可以实现定位追踪，不过现在没法用了。后来把他四五年前的源码发给我，打开发现他的源码还是基于 Android5.0 的，各种 API已经改版没法使用了，于是就开启了我的改版之路。\r\n\r\n#### **功能**\r\n##### **拍摄照片**\r\n- 实时获取本机的传感器信息（陀螺仪、GPS等传感器）；\r\n- 定时拍照，同时保存拍照这一刻的传感器信息；\r\n##### **查看照片**\r\n- 读取前面拍照时保存的图片的信息；\r\n- 监测当前位置与各传感器信息；\r\n- 对当前信息与照片信息进行对比，计算出需要做的动作（王某个方向移动多少步，传感器翻转多少角度）。\r\n##### **小总结**\r\n通过拍照与查看照片以及传感器信息对比，即可实现精确定位，通过户外实测，精度可达一米左右。\r\n\r\n### 二、**开始动手**\r\n#### **准备工作**\r\n距离上次开发安卓已经有五六年的时间了，再次捡起来还是有点小激动。\r\n- 首先安装 Android Studio，这款软件是谷歌基于 IEDA 开发的，必属精品，用起来特别舒服；\r\n- 安装模拟器，因为成老师的手机是 Android11，于是我安装的模拟器也选择了 Android11。\r\n#### **开始干活**\r\n经分析发现存在如下问题：\r\n- Android 更新后授权方式改变，原本直接在 Manifest 文件申请权限就可以运行了，而在 Android6.0 之后采用运行是授权来放置权限滥用；\r\n- Camera 这个API 早在 API21 之时就已废除，因此在 Android11 版本上没法使用，会导致闪退；\r\n- 文件存储在新版 Android 也更新了，更加规范，更加易管理。因此不能随意存储，只能在指定的目录存储，或者在应用目录下进行存储；\r\n- 传感器信号获取相关代码也不能工作。\r\n  \r\n### 三、**解决问题**\r\n针对发现的问题采用如下解决方案：\r\n- 更新授权方式为运行时授权，各种踩坑后决定采用 EasyPermissions 框架来管理权限；\r\n- 因为 Camera API 被废弃，便采用 CameraX，但是也出现了莫名其妙的问题（学艺不精），于是进一步偷懒，使用更更简单的 CameraView组件，几行代码便可实现照相机预览；\r\n- 文件存储则简单一点，只需要改改路径即可，参考 API 及很容易解决了。\r\n\r\n### 四、**效果展示**\r\n- 拍摄页面\r\n<img src=\"C:\\Users\\yiwp\\Desktop\\拍摄.png\" style=\"zoom:30%;\" alt=\"图片名称\" align=center />\r\n- 查看页面\r\n<img src=\"C:\\Users\\yiwp\\Desktop\\查看.jpg\" style=\"zoom:25%;\" align=center/>\r\n\r\n### 五、**总结**\r\n#### **还存在的问题**\r\n\r\n1、首次启动时摄像头不显示，重新启动即可；\r\n2、未拍照的情况想点击查看会闪退，后期修复；（已定位到原因为读取文件不存在）\r\n3、闪光灯关闭打开未作处理；\r\n4、停止拍摄后，再次点拍摄不起作用；\r\n5、点击退出若界面为从上个界面不会直接退出app，而是返回上一界面，知道缓存中没有界面才能退出；（后期修改）\r\n6、拍照间隔时间太短的话，通知会跟不上，造成无法停止拍照的错觉，其实拍照已经停止。（每拍一张照会弹一次拍照通知，一直按顺序弹，直到弹出的通知与照片数相对应）\r\n\r\n#### **使用的模块**\r\n```text\r\n1、EasyPermissions 权限管理模块\r\n2、CameraView 相机组件，快速实现相机预览、拍照灯一系列操作（超级简单，三行代码即可实现预览）\r\n\r\n```",
+      "data": {
+        "title": "成老师的带传感器信息的拍照想法",
+        "date": "2022-01-10 20:54:19",
+        "tags": [],
+        "published": true,
+        "hideInList": false,
+        "feature": null,
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "",
+      "fileName": "AHwvtR_oA"
+    },
+    {
+      "content": "# 一、下载QQ开发者工具\r\n# 二、新建项目\r\n## ![](http://yiwp9.github.io/post-images/1638237650452.png)\r\n![](http://yiwp9.github.io/post-images/1638237709354.png)\r\n# 项目文件介绍\r\n## 项目结构\r\n![](http://yiwp9.github.io/post-images/1638237736454.png)\r\n## 文件介绍\r\n### cloudfunctions\r\n云函数\r\n### pages\r\n页面\r\n#### index\r\nindex页面\r\n##### index.js\r\n逻辑代码文件\r\n##### index.json\r\n配置文件\r\n##### index.qml\r\n页面布局文件\r\n##### index.qss\r\n样式文件\r\n### utils\r\n资源\r\n### app.js ",
+      "data": {
+        "title": "QQ小程序开发上手之一：新建项目与文件介绍",
+        "date": "2021-11-30 09:55:41",
+        "tags": [],
+        "published": true,
+        "hideInList": false,
+        "feature": null,
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "",
+      "fileName": "e-iHH762c"
+    },
+    {
+      "content": "这是吃完饭回实验室，在电梯里听到的一句话。\r\n\r\n<!-- more -->\r\n\r\n情景再现：\r\n课题组某一女生用手摸了摸另一男生的肩膀，男生躲开，然后另一女生说她摸你占便宜的是你呀。\r\n\r\n\r\n<!-- more -->\r\n\r\n可我有种说不出的感受，心里问自己这社会到底怎么了。\r\n为什么大部分女性都有意无意地将自己放在弱势的位置，再去跟人谈平等，导致所谓的平等就是迁就一方，这不是我所能接受的平等。可这恰恰能迎合大多数女性，给某些妄想挑起我国社会男女对立，动荡我国社会的人有机可乘。\r\n\r\n晚点再写，先吃饭去\r\n\r\n想了很多，也无济于事。成年人的世界没有公平，做好自己。",
+      "data": {
+        "title": "她碰你，占便宜的是你！",
+        "date": "2021-10-22 10:15:37",
+        "tags": [
+          "随笔"
+        ],
+        "published": true,
+        "hideInList": false,
+        "feature": null,
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "这是吃完饭回实验室，在电梯里听到的一句话。\r",
+      "fileName": "ta-peng-ni-zhan-bian-yi-de-shi-ni"
+    },
+    {
+      "content": "国考\r\n\r\n江西省考\r\n\r\n浙江省考\r\n\r\n",
+      "data": {
+        "title": "相关考试",
+        "date": "2021-10-19 12:54:44",
+        "tags": [],
+        "published": false,
+        "hideInList": false,
+        "feature": null,
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "",
+      "fileName": "xiang-guan-kao-shi"
+    },
+    {
+      "content": "以 PWM 为例进行说明：\r\n\r\n### 静态任务\r\n\r\n```c\r\nstatic uint8_t PWM_Thread_Stack[1024];   //pwm 任务的栈的大小\r\nstatic void PWM_Thread_Entry(void *para); // pwm 任务的入口函数\r\nstatic struct rt_thread pwm_thread; //静态任务 pwm 的任务块\r\n```\r\n#### 任务初始化\r\n``` c \r\n    //初始化 pwm 任务， 启动 pwm 任务\r\n    int Pwm_Thread_Init(void)\r\n    {           \r\n         // 任务块     任务名     任务入口函数    任务参数   任务栈首地址    任务栈大小   优先级    时间片\r\n        rt_thread_init(&pwm_thread, \"pwm_thread\", PWM_Thread_Entry, RT_NULL, &PWM_Thread_Stack[0], sizeof(PWM_Thread_Stack), 10, 10);                       \r\n        //当两个任务优先级相同时，则按时间片轮流执行，比如 任务 A 时间片为 10个节拍，任务B           的时间片为5 个节拍，则  A 运行 10 个节拍然后B运行 5 个节拍，如此循环\r\n        rt_thread_startup(&pwm_thread);//启动任务\r\n        return 0;\r\n    }\r\n```\r\n#### 任务入口\r\n``` c\r\n    //pwm 任务入口\r\n    static void PWM_Thread_Entry(void *para)\r\n    {\r\n        Pwm_Init();\r\n        while (1)\r\n        {\r\n            /*使 RGB 灯红灯闪烁*/\r\n            for (int var = 0; var < period; var += 10000)\r\n            {\r\n                rt_pwm_set(pwm_dev, PWM_DEV_CHANNEL, period, var);\r\n                rt_thread_mdelay(200);\r\n            }\r\n        }\r\n    }\r\n```\r\n\r\n#### 添加任务到终端调试\r\n```c\r\n//将 pwm 任务加入到终端调试，在终端中执行 Pwm_Thread_Init 就会执行 pwm 任务，也可以不添加，直接在 main 里执行  Pwm_Thread_Init 也能执行\r\nINIT_APP_EXPORT(Pwm_Thread_Init);\r\n```\r\n### 动态任务\r\n\r\n```c\r\n//创建线程启动函数，用于启动上一步编写的线程主体\r\nstatic int Thread_RGB(void)\r\n{\r\n    rt_thread_t thread = RT_NULL;\r\n    thread = rt_thread_create(\"rgb\", rgb_thread_entry, RT_NULL, 512, 10, 10);\r\n    if (thread == RT_NULL)\r\n    {\r\n        rt_kprintf(\"Thread_GRB Init ERROR\");\r\n        return RT_ERROR;\r\n    }\r\n    rt_thread_startup(thread);\r\n}\r\n```\r\n\r\n### 静态任务与动态任务对比\r\n\r\n使用静态线程时，必须先定义静态的线程控制块，并且定义好堆栈空间，然后调用rt_thread_init（） 来完成线程的初始化工作。采用这种方式，线程控制块和堆栈占用的内存会放在 RW/ZI 段，这段空间在编译时就已经确定，它不是可以动态分配的，所以不能被释放，而只能使用 rt_thread_detach() 函数将该线程控制块从对象管理器中脱离。\r\n\r\n使用动态定义方式 rt_thread_create() 时， RT-Thread 会动态申请线程控制块和堆栈空间。在编译时， 编译器是不会感知到这段空间的，只有在程序运行时， RT-Thread 才会从系统堆中申请分配这段内存空间，当不需要使用该线程时，调用 rt_thread_delete() 函数就会将这段申请的内存空间重新释放到内存堆中。\r\n\r\n这两种方式各有利弊，静态定义方式会占用 RW/ZI 空间，但是不需要动态分配内存，运行时效率较高，实时性较好。 动态方式不会占用额外的 RW/ZI 空间，占用空间小，但是运行时需要动态分配内存，效率没有静态方式高。 总的来说，这两种方式就是空间和时间效率的平衡，可以根据实际环境需求选择采用具体的分配方式。\r\n",
+      "data": {
+        "title": "RT-Thread 任务创建",
+        "date": "2021-10-07 14:47:37",
+        "tags": [
+          "RT-Thread"
+        ],
+        "published": true,
+        "hideInList": false,
+        "feature": "/post-images/rt-thread-shang-shou.png",
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "",
+      "fileName": "rt-thread-shang-shou"
+    },
+    {
+      "content": "2008年士兵突击",
+      "data": {
+        "title": "从士兵突击到我的团长我的团再到长津湖——兰晓龙的",
+        "date": "2021-10-07 14:42:56",
+        "tags": [],
+        "published": false,
+        "hideInList": false,
+        "feature": null,
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "",
+      "fileName": "cong-shi-bing-tu-ji-dao-wo-de-tuan-chang-wo-de-tuan-zai-dao-chang-jin-hu-lan-xiao-long-de"
+    },
+    {
+      "content": "```余秋雨说，中年人失去方寸的主要特征是忘记自己的年龄，一会儿要求别人对待青年一样关爱自己，一会儿又要求别人对待老人那样尊敬自己。明明一个大男人，却不能对任何稍稍大一点的问题做出决定，频频找领导倾诉衷肠，出了什么事情又逃得远远地不敢负一点责任。```\r\n    \r\n这么看我似乎已经成为一名中年人了，由于工作数年返校读研，时常觉得自己还是学生，又自认比学生大几岁，认识比他们深刻。显然，我的创造力和冒险能力都不高，我害怕做多错多，因此选择找领导做决策，我怕失败，害怕年纪大了一事无成的失败感，我很清楚自己读研的目的，因此能避开及避开。\r\n\r\n但我也有我的梦想，有我的规划，虽已岁至中年，但我仍相信天生我材必有用，大不了就是大器晚成了！\r\n\r\n读余秋雨散文有感，随手写写，毫无逻辑，权当流水账。",
+      "data": {
+        "title": "中年人的特征",
+        "date": "2021-09-21 14:23:21",
+        "tags": [
+          "随笔"
+        ],
+        "published": true,
+        "hideInList": false,
+        "feature": null,
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "",
+      "fileName": "zhong-nian-ren-de-te-zheng"
+    },
+    {
+      "content": "``` 本文转自 https://blog.csdn.net/weixin_39976450/article/details/99638801```\r\n解决办法：\r\n将C:\\Program Files\\Common Files\\Microsoft Shared下的VBA文件夹删除即可。（不影响office正常使用）SolidWorks的初始化VBA引擎与微软office的VBA有冲突。----win7 64位\r\n经验：office重装过，然后出现SolidWorks没能启动应用程序VISUAL BASIC的问题。 ",
+      "data": {
+        "title": "SolidWorks 没能启动应用程序 Visual Basic，方程式和宏将不能使用。您的磁盘空间是否不足？",
+        "date": "2021-09-10 14:42:46",
+        "tags": [],
+        "published": true,
+        "hideInList": false,
+        "feature": null,
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "",
+      "fileName": "solidworks-mei-neng-qi-dong-ying-yong-cheng-xu-visual-basicfang-cheng-shi-he-hong-jiang-bu-neng-shi-yong-nin-de-ci-pan-kong-jian-shi-fou-bu-zu"
+    },
+    {
+      "content": "``` 文章图片来源于：太极创客 ```\r\n\r\n## MQTT 协议简介\r\n\r\n    MQTT是一个客户端服务端架构的发布/订阅模式的消息传输协议。它的设计思想是轻巧、开放、简单、规范，易于实现。这些特点使得它对很多场景来说都是很好的选择，特别是对于受限的环境如机器与机器的通信（M2M）以及物联网环境（IoT）。\r\n\r\n    ——MQTT协议规范中文版\r\n\r\n\r\n## 我对 MQTT 协议的阿简单理解\r\n\r\n![图片来源于：太极创客](https://yiwp9.github.io/post-images/1631156011429.jpg)\r\n\r\n![图片来源于：太极创客](https://yiwp9.github.io/post-images/1631156416859.jpg)\r\n\r\n### **topic：**\r\n\r\n云端和设备之间通信成为发布、接收消息，发布和接收消息都要通过 **topic，topic** 就相当于一个管道，一侧是发布消息的源头，另一侧是消息的接收者，如果没有这个管道（**topic**）这两端就没法通信了。\r\n\r\n### **publish：**\r\n\r\n**publish** 就是上面说到的消息发送者用来发送小的的工具，比如 A 为消息的发送者， A 准备给大家说一句 “你好”，就必须使用 **publish ** 来指定使用那个管道（**topic**）来发送什么消息。\r\n\r\n### **subscribe：**\r\n\r\n**subscribe** 与 **publish** 相对应，为消息的接收者。比如 B 想要接收某个管道（**topic**）的消息\r\n就必须使用 **subscribe** 来订阅/绑定这个管道（**topic**），如果上面提到的 A 发送消息使用的管道（**topic**）为 messageTpoic 这个 B 使用的管道（**topic**）也为 messageTpoic，那么 B 就能收到 A 发送的 “你好”。\r\n\r\n## 其他\r\n\r\nMQTT 协议里还有好多其他功能，这里只简单介绍了基本的通讯，详细内容请查阅 MQTT 官方协议。",
+      "data": {
+        "title": "MQTT 协议",
+        "date": "2021-09-07 11:17:20",
+        "tags": [],
+        "published": true,
+        "hideInList": false,
+        "feature": null,
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "",
+      "fileName": "mqtt-xie-yi"
+    },
+    {
+      "content": "# 视频下载\r\n找到目标视频，进行下载，可以在这个网站：\r\n- https://www.clipconverter.cc/2/\r\n- https://zh.savefrom.net/7/\r\n\r\n# 下载字幕\r\n到这个网站下载 srt 的字幕\r\n - https://downsub.com/\r\n\r\n# 翻译字幕\r\n用 word 打开下载的 srt 文件，自行翻译字幕\r\n\r\n# 制作字幕\r\n下载 arctime 或者 用 Pr 制作字幕\r\n\r\n# 导出视频\r\n",
+      "data": {
+        "title": "youtube 视频搬运、翻译、添加字幕",
+        "date": "2021-08-25 21:04:23",
+        "tags": [],
+        "published": true,
+        "hideInList": false,
+        "feature": null,
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "",
+      "fileName": "youtube-shi-pin-ban-yun-fan-yi-tian-jia-zi-mu"
+    },
+    {
+      "content": "1. 嘉立创\r\n    - 每月 2 次免费机会\r\n2. 捷配\r\n    - 个人用户每月 2 次\r\n    - 企业认证用户每月 5 次\r\n3. 华秋 PCB\r\n   - 活动时间：2021/7-2021/12/31\r\n   - 个人用户每月 2 次\r\n    - 企业认证用户每月 4 次",
+      "data": {
+        "title": "PCB免费打样平台",
+        "date": "2021-08-09 15:56:57",
+        "tags": [],
+        "published": false,
+        "hideInList": false,
+        "feature": null,
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "",
+      "fileName": "pcb-mian-fei-da-yang-ping-tai"
+    },
+    {
+      "content": "```本文参考：https://blog.csdn.net/qq_41489527/article/details/109502016```\r\n\r\n<!-- more -->\r\n# 现象如下：\r\n![](https://yiwp9.github.io/post-images/1628473899433.png)\r\n\r\n# 解决方法\r\n## 方法一\r\n1.用Win+R键打开运行窗口，输入 services.msc 然后回车。\r\n2.在服务窗口中找到 Network Location Awareness\r\n3.双击 Network Location Awareness 服务，在常规界面点击启动类型后面的选项框中选择自动，选好后点击应用，应用自动启动后，点击服务状态下面的“启动”按钮，等待启动完成就好了。\r\n\r\n## 方法二\r\n1.用Win+R键打开运行窗口，输入 cmd 然后回车。\r\n2.在弹出的黑色背景的窗口中输入 “netsh winsock reset” 再按回车键。\r\n3.之后重启电脑\r\n\r\n## 方法三\r\n打开 “网络和Internet”设置” ，然后在最下面有一个“网络重置”选项，点击之后按照要求操作，然后重启电脑。\r\n![](https://yiwp9.github.io/post-images/1628474129277.png)\r\n\r\n## 方法四\r\n1.用Win+R键打开运行窗口，输入 services.msc 然后回车。\r\n2.在服务窗口，找到 Window Event log ，并点击“启动”运行。\r\n3.如果出现报错以及无法启动的情况，说明的确是这里出现了问题，可以继续下面的操作进行修复。\r\n4.用Win+R键打开运行窗口，输入 regedit 然后回车，打开注册表。\r\n5.然后按照如下图片中的路径，找到 Window Event log 下面的项。（路径为：计算机\\HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\EventLog）\r\n6.注意！如果之前Window Event log 不能够正常启动的话，注册表里Window Event log下面的项中，是缺少了一个“Parameters” 即没有完整如上图所示的“”“Parameters”项，缺少了里面的东西。\r\n7.接下来的解决的办法是，要自己补全缺少的 “Parameters” 。一个是可以自己手动敲打添加，具体的名称和格式如下图结合上图所示。一个一个对照手动打进去就可以了。\r\n\r\n8.还有一个解决办法就是，找到一个正确的注册表文件，然后重新加载一下就可以了。把正确的Window Event log注册表文件复制到桌面上，然后点击加载就可以了。\r\n正确注册表文件链接：https://1drv.ms/u/s!Aq6lNqlSTtDHqWkD1gnhShGlLu-i?e=NPnRCG\r\n或者新建一个文本文件，复制如下代码，再将此文件修改后缀为 reg，最后双击运行即可。\r\n   ` Windows Registry Editor Version 5.00\r\n    [HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\EventLog\\Parameters]\r\n    \"ServiceDLL\"=hex(2):25,00,53,00,79,00,73,00,74,00,65,00,6d,00,52,00,6f,00,6f,\\\r\n    00,74,00,25,00,5c,00,53,00,79,00,73,00,74,00,65,00,6d,00,33,00,32,00,5c,00,\\\r\n    77,00,65,00,76,00,74,00,73,00,76,00,63,00,2e,00,64,00,6c,00,6c,00,00,00\r\n    \"ServiceDllUnloadOnStop\"=dword:00000001\r\n    \"ServiceMain\"=\"ServiceMain\"`",
+      "data": {
+        "title": "win10 网络状态变成一条虚线的解决方法",
+        "date": "2021-08-09 09:47:46",
+        "tags": [],
+        "published": true,
+        "hideInList": false,
+        "feature": null,
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "```本文参考：https://blog.csdn.net/qq_41489527/article/details/109502016```\r",
+      "fileName": "win10-wang-luo-zhuang-tai-bian-cheng-yi-tiao-xu-xian-de-jie-jue-fang-fa"
+    },
+    {
+      "content": "前两位与后两位分别表示电阻的长与宽，以英寸为单位\r\n即 06 表示 0.06inch = 1.524mm， 0.03inch = 0.762mm\r\n注意：封装尺寸是实物封装的尺寸，不是焊盘的或者pcb封装图的尺寸，pcb封装图的尺寸会稍微大些\r\n\r\n![](https://yiwp9.github.io/post-images/1627436715029.png)\r\n\r\n其他像 0805、1206也是这个意思\r\n\r\nmask 阻焊层，不喷绿油\r\npaste 锡膏层，开钢网时开的孔  ",
+      "data": {
+        "title": "电阻 0603 封装是什么意思",
+        "date": "2021-07-28 09:35:32",
+        "tags": [],
+        "published": true,
+        "hideInList": false,
+        "feature": null,
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "",
+      "fileName": "dian-zu-0603-feng-zhuang-shi-shi-me-yi-si"
+    },
+    {
+      "content": "啊",
+      "data": {
+        "title": "用 C 语言编写自己的 Arduino 库",
+        "date": "2021-07-23 09:24:25",
+        "tags": [],
+        "published": true,
+        "hideInList": false,
+        "feature": null,
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "",
+      "fileName": "yong-c-yu-yan-bian-xie-zi-ji-de-arduino-ku"
+    },
+    {
+      "content": "如果有人问你最喜欢的是什么，你会怎么回答呢？可能有的朋友会说我喜欢玩游戏，而且我玩的贼溜；有的会说我喜欢吃，我对吃特别有研究；还有的朋友可能会说我喜欢旅游，只有不断地在路上才能使我开心……而我却不知道我喜欢什么。\r\n\r\n",
+      "data": {
+        "title": "随笔",
+        "date": "2021-06-26 10:06:40",
+        "tags": [],
+        "published": true,
+        "hideInList": false,
+        "feature": null,
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "",
+      "fileName": "sui-bi"
+    },
+    {
+      "content": "## **切片参数设置**\r\n\r\n层高 0.2\r\n壁厚 0.8\r\n喷头温度 210 （高了） 调到 200 度试试 （未测试）\r\n热床稳定  60\r\n\r\n速度 50\r\n挤出速度 100\r\n填充 10%\r\n\r\n\r\n平台不平、材料受潮、温度不对会导致打印特别粗糙，就像这种\r\n![](https://yiwp9.github.io/post-images/1624611549665.png)\r\n\r\npetg 热床应该用东西垫着，否则会粘连，导致热床废掉，这里的金属热床则不需要垫子\r\n\r\n## **补充**\r\n\r\n修改之后：\r\n![](https://yiwp9.github.io/post-images/1624672964163.jpg)\r\n\r\n![](https://yiwp9.github.io/post-images/1624672970649.jpg)\r\n\r\n效果好了很多，就是小的那个有一点移位，不知道是不是成老师粘了胶带的原因。晚点再打印试试。\r\n\r\n",
+      "data": {
+        "title": "3D打印记录",
+        "date": "2021-06-25 16:12:05",
+        "tags": [],
+        "published": true,
+        "hideInList": false,
+        "feature": null,
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "",
+      "fileName": "3d-da-yin-ji-lu"
+    },
+    {
+      "content": "# **一、条件**\r\n- 注册 Github [链接](https://github.com/)\r\n- 下载安装 Gridea [链接](https://gridea.dev/)\r\n\r\n# **二、创建 Github 仓库用于存储网页数据**\r\n\r\n![](https://yiwp9.github.io/post-images/1624361974527.png)\r\n![](https://yiwp9.github.io/post-images/1624362078240.png)\r\n此处因为我已经创建过名称为 yiwp9.github.io 的库了，所以提示不可用，如果你没创建过则不会报错，直接点创建即可。\r\n\r\n# **三、获取仓库的 token**\r\n\r\n![](https://yiwp9.github.io/post-images/1624362992005.png)\r\n![](https://yiwp9.github.io/post-images/1624362997739.png)\r\n![](https://yiwp9.github.io/post-images/1624363003061.png)\r\n![](https://yiwp9.github.io/post-images/1624363007040.png)\r\n记住生成的 token\r\n\r\n# **四、配置 Gridea**\r\n\r\n![](https://yiwp9.github.io/post-images/1624363105092.png)\r\n\r\n# **五、验证**\r\n在浏览器中输入 仓库的名称 （我这里是 yiwp9.github.io）即可看到页面\r\n\r\n![](https://yiwp9.github.io/post-images/1624363217273.png)\r\n\r\n\r\n\r\n# **补充1**\r\n\r\n## **自定义域名**\r\n\r\n- **设置域名**\r\n\r\n进入项目设置选项，一直往下翻，找到 Github Pages \r\n![](https://yiwp9.github.io/post-images/1624439171684.png)\r\n\r\n- **获取页面 ip**\r\n- \r\n  ![](https://yiwp9.github.io/post-images/1624439315737.png)\r\n\r\n- **域名解析**\r\n\r\n到域名商网站进行解析，此处以阿里云作演示：\r\n![](https://yiwp9.github.io/post-images/1624439367527.png)\r\n\r\n这样就可以通过 自定义的域名来访问站点了\r\n\r\n\r\n\r\n# **补充2**\r\n\r\n## **添加评论功能**\r\n\r\nsetting ->  Developer settings -> OAuth Apps  -> New OAuth Apps\r\n![](https://yiwp9.github.io/post-images/1624540128346.png)\r\n\r\n# **补充3**\r\n\r\n## **删除底部的 RSS图标**\r\n\r\n![](https://yiwp9.github.io/post-images/1624343380604.jpeg)\r\n\r\n首先打开源文件下的 themes->notes->templates->includes 文件夹下的 footer.ejs .\r\n删除如下代码，或更换为自己的代码。\r\n![](https://yiwp9.github.io/post-images/1624343605661.png)\r\n\r\n这样就完成啦，效果如下：\r\n\r\n![](https://yiwp9.github.io/post-images/1624343707858.png)\r\n\r\n\r\n<span id=\"busuanzi_container_page_pv\">\r\n  本文总阅读量<span id=\"busuanzi_value_page_pv\"></span>次\r\n</span>\r\n\r\n\r\n\r\n\r\n",
+      "data": {
+        "title": "Github + Gridea 搭建个人博客",
+        "date": "2021-06-22 19:09:10",
+        "tags": [],
+        "published": true,
+        "hideInList": false,
+        "feature": null,
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "",
+      "fileName": "github-gridea-da-jian-ge-ren-bo-ke"
+    },
+    {
+      "content": "> 欢迎来到我的小站呀，很高兴遇见你！🤝\n\n## 🏠 关于本站\n\n## 👨‍💻 博主是谁\n\n## ⛹ 兴趣爱好\n\n## 📬 联系我呀\n",
+      "data": {
+        "title": "关于",
+        "date": "2019-01-25 19:09:48",
+        "tags": [],
+        "published": true,
+        "hideInList": true,
+        "feature": null,
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "",
+      "fileName": "about"
+    },
+    {
+      "content": "👏  欢迎使用 **Gridea** ！  \n✍️  **Gridea** 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ... \n\n<!-- more -->\n\n[Github](https://github.com/getgridea/gridea)  \n[Gridea 主页](https://gridea.dev/)  \n[示例网站](http://fehey.com/)\n\n## 特性👇\n📝  你可以使用最酷的 **Markdown** 语法，进行快速创作  \n\n🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片  \n\n🏷️  你可以对文章进行标签分组  \n\n📋  你可以自定义菜单，甚至可以创建外部链接菜单  \n\n💻  你可以在 **Windows**，**MacOS** 或 **Linux** 设备上使用此客户端  \n\n🌎  你可以使用 **𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌** 或 **Coding Pages** 向世界展示，未来将支持更多平台  \n\n💬  你可以进行简单的配置，接入 [Gitalk](https://github.com/gitalk/gitalk) 或 [DisqusJS](https://github.com/SukkaW/DisqusJS) 评论系统  \n\n🇬🇧  你可以使用**中文简体**或**英语**  \n\n🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力  \n\n🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步  \n\n🌱 当然 **Gridea** 还很年轻，有很多不足，但请相信，它会不停向前 🏃\n\n未来，它一定会成为你离不开的伙伴\n\n尽情发挥你的才华吧！\n\n😘 Enjoy~\n",
+      "data": {
+        "title": "Hello Gridea",
+        "date": "2018-12-12 00:00:00",
+        "tags": [
+          "Gridea"
+        ],
+        "published": true,
+        "hideInList": false,
+        "feature": "/post-images/hello-gridea.png",
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "👏  欢迎使用 **Gridea** ！  \n✍️  **Gridea** 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ... ",
+      "fileName": "hello-gridea"
+    }
+  ],
+  "tags": [
+    {
+      "name": "RT-Thread",
+      "slug": "zjldmOtKv",
+      "used": true
+    },
+    {
+      "index": -1,
+      "name": "随笔",
+      "slug": "Nqwj4gzc7",
+      "used": true
+    },
+    {
+      "name": "Gridea",
+      "slug": "BMN7g0Kpy",
+      "used": true
+    },
+    {
+      "index": -1,
+      "name": "博客搭建",
+      "slug": "YWzuL1DuQ",
+      "used": false
+    }
+  ],
+  "menus": [
+    {
+      "link": "/",
+      "name": "首页",
+      "openType": "Internal"
+    },
+    {
+      "link": "/archives",
+      "name": "归档",
+      "openType": "Internal"
+    },
+    {
+      "link": "/tags",
+      "name": "标签",
+      "openType": "Internal"
+    },
+    {
+      "link": "/post/about",
+      "name": "关于",
+      "openType": "Internal"
+    }
+  ]
+}
